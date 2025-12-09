@@ -1,6 +1,4 @@
-###This scrip checks IAM users without MFA enabled###
-###Lists access keys older than 90 day### 
-###Lists S3 BBuckets that are public###
+# Python script for auditing IAM users, access keys, and S3 bucket exposure.
 
 import boto3
 
