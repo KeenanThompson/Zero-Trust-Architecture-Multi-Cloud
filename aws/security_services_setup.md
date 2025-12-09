@@ -1,5 +1,3 @@
-# File: aws/security_services_setup.md
-
 # AWS Security Services Configuration
 
 ## Services Enabled
