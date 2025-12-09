@@ -1,4 +1,3 @@
-```md
 # Linux Endpoint Security and Telemetry
 
 This document describes the security and telemetry approach for Linux hosts in this environment.
