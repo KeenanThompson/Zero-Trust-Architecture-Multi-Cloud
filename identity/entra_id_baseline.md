@@ -1,28 +1,33 @@
 # Entra ID Identity Security Baseline
 
-## Core Controls
+Controls implemented:
 
-- MFA enforced for all users via Conditional Access.
-- Legacy authentication protocols blocked.
-- Admin and privileged roles require strong MFA.
-- Named locations:
-  - Trusted: home and primary regions.
-  - Blocked: selected high-risk countries and IP ranges.
-- Break-glass accounts:
-  - At least one emergency account excluded from all Conditional Access.
-  - Strong, long, non-expiring password and out-of-band storage.
+## Core Authentication
+- MFA enforced for all users.
+- Passkeys and FIDO2 authentication enabled.
+- Authentication Strengths configured:
+  - Phishing-resistant only
+  - Passwordless + MFA
+  - Strong MFA
 
-## Conditional Access Highlights
+## Legacy Access Control
+- Legacy authentication blocked globally.
+- SMTP basic and older Exchange protocols disabled.
 
-- Require MFA for all interactive sign-ins.
-- Require compliant device for key Microsoft 365 workloads.
-- Require compliant device or MFA for risky sign-ins.
-- Block sign-ins from blocked countries/IP ranges.
+## Privileged Access
+- Admin roles require MFA.
+- Separate break-glass accounts established with exclusions.
+- Administrative units prepared for future scoping.
 
-## Authentication Strength
+## Conditional Access Policies
+- Require MFA for all users.
+- Require compliant device for key applications.
+- Block high-risk sign-ins.
+- Medium-risk sign-ins require MFA.
+- Trusted locations defined (IP/GPS-based).
+- Blocked countries enforced.
+- Risk-based CA (sign-in risk and user risk) enabled.
+- Authentication strength applied to admin roles.
 
-- Phishing-resistant strength configured (FIDO2/passkeys).
-- Passwordless + MFA combination allowed where supported.
-- Legacy/basic auth blocked to remove password-only flows.
-
-This baseline provides an identity control set aligned with Zero Trust principles and common enterprise practices.
+## Device Integration
+- Intune compliance signals enforced for macOS, i
