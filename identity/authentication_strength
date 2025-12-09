@@ -1,0 +1,28 @@
+# Authentication Strength Configuration
+
+Authentication Strengths implemented in Entra ID:
+
+## Phishing-Resistant Authentication
+- FIDO2 security keys
+- Passkeys
+- Device-bound cryptographic authentication
+- Applied to:
+  - All admin roles
+  - High-risk sign-in scenarios
+  - Sensitive applications
+
+## Passwordless + MFA
+- Microsoft Authenticator (number matching)
+- Passkeys where supported
+- Applied to general user sign-ins
+
+## Strong MFA (Fallback)
+- Allowed only for break-glass exception flows
+- Not used for privileged accounts
+
+## Legacy Authentication
+- Fully blocked at the tenant level
+- SMTP/POP/IMAP legacy protocols disabled
+- No password-only authentication paths remain
+
+Authentication strength is now enforced through CA policies, ensuring consistent Zero Trust identity validation tied to user risk, device risk, and authentication context.
