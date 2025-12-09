@@ -1,6 +1,8 @@
+### Identity Federation and Access Flow Diagram
+
+---
 
 ```markdown
-### Identity Federation and Access Flow Diagram
 
 This diagram focuses on how authentication and authorization flow across Entra ID, Okta, AWS, and SaaS applications.
 
