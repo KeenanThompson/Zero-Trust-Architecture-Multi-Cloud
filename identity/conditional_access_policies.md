@@ -1,35 +1,38 @@
-# Conditional Access Policies
+# Conditional Access Policy Summary
 
-## CA01 – Require MFA
-Applies MFA to all interactive sign-ins.
+This section summarizes the Conditional Access policies implemented in Entra ID.
 
-## CA02 – Block Legacy Authentication
-Blocks basic/legacy authentication protocols across the tenant.
+## Policy List
 
-## CA03 – Admin MFA Enforcement
-Requires MFA for all privileged roles.
+### CA01 – Require MFA
+Enforces MFA for standard user sign-ins.
 
-## CA04 – Block High-Risk Sign-ins
-Blocks sign-ins where Entra ID evaluates user or sign-in risk as “High.”
+### CA02 – Block legacy authentication
+Denies all legacy protocol authentication flows.
 
-## CA05 – Medium-Risk = MFA
-Medium-risk sign-ins require MFA to continue.
+### CA03 – Admin MFA enforcement
+Targets privileged roles.
+Requires strong MFA and modern auth only.
 
-## CA06 – Require Compliant Device
-Enforces device compliance for core Microsoft 365 applications.
+### CA04 – Block high-risk sign-ins
+Blocks sign-ins classified as high risk.
 
-## CA08 – Trusted Locations
-Applies IP- and GPS-based trusted location rules.
+### CA05 – Medium-risk requires MFA
+Prompts for MFA when sign-in risk is medium.
 
-## CA09 – Blocked Countries
-Blocks authentication attempts originating from high-risk geographic regions.
+### CA06 – Require compliant device
+Requires Intune-compliant device for selected applications.
 
-## CA10 – Require Compliant Device for Risky Sign-ins
-If a sign-in is risky but not blocked, a compliant device is required.
+### CA08 – Trusted locations
+Applies more relaxed controls from trusted locations where appropriate.
 
-## CA11 – Admin Roles MFA Baseline
-Additional MFA requirement applied only to administrative roles.
+### CA09 – Blocked countries
+Blocks sign-in from selected high-risk geographic locations or IP ranges.
 
-## Notes
-- Break-glass accounts are excluded from all Conditional Access policies.
-- Authentication Strength (“phishing-resistant” and “passwordless + MFA”) is applied to relevant policies and admin roles.
+### CA10 – Require compliant device for risky sign-ins
+For risky sign-ins, enforces a combination of MFA and compliant device posture.
+
+### CA11 – Admin roles MFA baseline
+Additional enforcement targeting admin roles only, ensuring MFA cannot be bypassed.
+
+These policies work together to enforce strong identity assurance, device trust, and contextual access decisions.
