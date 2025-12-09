@@ -60,7 +60,7 @@ This diagram shows the AWS-side security controls and how they interact.
 - GuardDuty → analyzes logs and traffic, feeds findings to Security Hub.
 - Security Hub → central view of compliance and security posture.
 
-## Mermaid Sketch (Optional)
+## Mermaid Sketch
 
 ```mermaid
 flowchart LR
