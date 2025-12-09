@@ -25,4 +25,4 @@
 - Passwordless + MFA combination allowed where supported.
 - Legacy/basic auth blocked to remove password-only flows.
 
-This baseline provides a realistic identity control set aligned with Zero Trust principles and common enterprise practices.
+This baseline provides an identity control set aligned with Zero Trust principles and common enterprise practices.
