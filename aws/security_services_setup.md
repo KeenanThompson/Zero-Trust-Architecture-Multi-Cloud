@@ -30,4 +30,4 @@
   - Prevent disabling key logging services (implemented as IAM permissions restrictions).
   - Enforce MFA and strong access patterns where applicable.
 
-This configuration reflect a baseline for monitoring and securing an AWS account in a controlled lab.
+This configuration reflect a baseline for monitoring and securing an AWS account in a controlled sandbox environment.
