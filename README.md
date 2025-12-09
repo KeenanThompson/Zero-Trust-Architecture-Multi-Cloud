@@ -105,4 +105,4 @@ This repository demonstrates the ability to design, implement, secure, and integ
 
 ## License
 
-This project is provided for demonstration, reference, and educational purposes.
+This is provided for demonstration, reference, and educational purposes.
