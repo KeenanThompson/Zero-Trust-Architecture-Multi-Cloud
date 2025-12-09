@@ -1,5 +1,3 @@
-# File: azure/intune_device_baselines.md
-
 # Intune Device Compliance and Configuration Baselines
 
 ## Enrolled Platforms
