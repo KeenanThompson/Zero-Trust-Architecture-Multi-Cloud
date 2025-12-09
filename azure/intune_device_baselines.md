@@ -1,37 +1,50 @@
-# Intune Device Compliance Policies
+# File: azure/intune_device_baselines.md
+
+# Intune Device Compliance and Configuration Baselines
 
 ## Enrolled Platforms
+
 - macOS
-- iOS / iPadOS
-- Windows (optional for later expansion)
-- Linux (tracked via compliance reporting only; no native Intune MDM)
+- iOS/iPadOS
+- Windows (where supported in the lab)
+- Linux (tracked and hardened, but not enrolled via Intune; managed through local baselines and scripts)
 
-## Compliance Policies Implemented
+## Compliance Policies
 
-### macOS Compliance Rules
-- FileVault disk encryption required
-- Firewall enabled
-- Secure password compliant with organizational rules
-- System integrity verification (Gatekeeper)
-- Real-time protection active (Defender for Endpoint optional)
-- Device must not be jailbroken or tampered
+Applied via Intune where supported (macOS, iOS/iPadOS, Windows):
 
-### iOS / iPadOS Compliance Rules
-- Passcode required
-- Encryption enforced by iOS hardware
-- Device must not be jailbroken
-- Minimum OS version enforced
+- Disk encryption required (FileVault on macOS, BitLocker where available on Windows).
+- Firewall enabled.
+- Secure password/passcode policies.
+- OS version and system integrity checks where available.
 
-### Windows (Optional Mapping)
-- BitLocker required
-- Defender Antivirus enabled
-- Firewall enabled
-- Secure Boot required
-- Device Health attestation verified
+Linux:
 
-## Compliance Reporting
-- Devices monitored through Intune Device Compliance dashboard
-- Advanced Analytics and Microsoft Graph used for compliance insights
-- Non-compliant devices automatically challenged via Conditional Access
+- Local hardening and audit configuration managed outside Intune using scripts and system settings.
 
+## Configuration Profiles (Intune)
 
+macOS:
+
+- Firewall configuration profile.
+- FileVault enforcement profile.
+- Gatekeeper-related application execution settings.
+- Login window and basic security restrictions.
+
+iOS/iPadOS:
+
+- Basic device compliance checks.
+- Enrollment via Company Portal application.
+
+Windows:
+
+- Enrollment and basic compliance checks where possible.
+
+## Additional Features
+
+- Company Portal used for enrollment and user-driven device registration.
+- Reporting and visibility through:
+  - Device compliance reports.
+  - Endpoint analytics and advanced analytics where licensed.
+
+This gives a realistic cross-platform baseline: Apple and Windows devices via Intune, and Linux documented via host-level hardening.
