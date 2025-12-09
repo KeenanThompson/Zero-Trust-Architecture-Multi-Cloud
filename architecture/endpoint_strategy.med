@@ -1,0 +1,73 @@
+# Endpoint Strategy
+
+This document describes how endpoints are treated as a first-class security boundary and how different platforms are managed and monitored.
+
+## Goals
+
+- Maintain a consistent security posture across macOS, Windows, Linux, and iOS/iPadOS.
+- Use device compliance and EDR telemetry as part of access decisions.
+- Ensure endpoints are hardened, monitored, and recoverable.
+
+## Platform Overview
+
+### macOS
+
+- Enrolled into Intune for:
+  - Device compliance (encryption, password policy, firewall).
+  - Configuration profiles (firewall, FileVault, Gatekeeper, login restrictions where applicable).
+- Protected by:
+  - Built-in macOS security features.
+  - EDR coverage via Defender for Endpoint (onboarding performed where supported) and CrowdStrike.
+
+### iOS/iPadOS
+
+- Enrolled into Intune via Company Portal and Apple MDM integration.
+- Configuration and compliance applied for:
+  - Passcode requirements.
+  - Encryption and device lock.
+  - Basic app and device restrictions where defined.
+- Used as a second factor and productivity device with controlled access to M365.
+
+### Windows
+
+- Windows endpoint used for:
+  - Demonstrating Defender AV and security baselines.
+  - Testing identity and browser-based access via Entra ID and Conditional Access.
+- Security posture:
+  - Defender Antivirus enabled.
+  - Firewall enabled.
+  - Local configuration used where Intune or Defender for Endpoint integration is constrained by edition.
+
+### Linux
+
+- Ubuntu system hardened with:
+  - SSH hardening (key-based auth, restricted configuration).
+  - Firewall (ufw) with minimal open ports.
+  - auditd, syslog, and related telemetry for process and auth monitoring.
+- Can be used for:
+  - Host-level logging and correlation in SIEM.
+  - Testing IAM-based access to AWS CLI.
+
+## Identity and Access Integration
+
+- Device state is used in Conditional Access:
+  - macOS and iOS/iPadOS report compliance via Intune.
+  - Windows and Linux are integrated primarily through local controls and identity-side policies.
+- CA policies enforce:
+  - MFA for all sign-ins.
+  - Stronger requirements for admin roles and risky sessions.
+  - Location-based rules and risk-based access decisions.
+
+## EDR and Telemetry
+
+- macOS and iOS/iPadOS:
+  - CrowdStrike sensors where licensed.
+  - Defender for Endpoint on macOS.
+- Windows:
+  - Defender AV and event logging.
+  - EDR integration planned where licensing allows.
+- Linux:
+  - System logs and auditd used for monitoring.
+  - EDR agent planned as an extension.
+
+Endpoints are not treated as trusted by default; they must meet configuration and monitoring requirements before being used for sensitive access.
