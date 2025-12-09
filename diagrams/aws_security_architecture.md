@@ -1,14 +1,11 @@
 ### AWS Security Architecture
 
 ##
-AWS Security Architecture Diagram
+This diagram shows the AWS-side security controls and how they interact.
 
 ---
 
 ```markdown
-
-
-This diagram shows the AWS-side security controls and how they interact.
 
 ## Components
 
