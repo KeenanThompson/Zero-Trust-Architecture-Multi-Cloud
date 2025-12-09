@@ -55,7 +55,7 @@ This diagram focuses on how macOS, Windows, Linux, and iOS/iPadOS devices are se
    - Identity and sign-in logs are available from Entra/M365.
    - Cloud alerts originate from GuardDuty / Security Hub.
 
-## Mermaid Sketch (Optional)
+## Mermaid Sketch
 
 ```mermaid
 flowchart LR
