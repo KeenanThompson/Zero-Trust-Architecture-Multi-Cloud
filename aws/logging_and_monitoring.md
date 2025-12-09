@@ -1,51 +1,72 @@
 # AWS Logging and Monitoring Architecture
 
-This file documents the full monitoring stack implemented in AWS to support Zero Trust detection and auditability.
+This document describes how logging and monitoring are configured in AWS.
 
-## CloudTrail Configuration
-- Organization-style trail simulated for a single account.
-- Logs all management and data events.
-- S3 bucket hardened:
-  - Block public access
-  - Access logging enabled
-  - Versioning enabled
+## Core Services
 
-## AWS Config
-- Tracks configuration drift for:
-  - IAM policies
-  - Security groups
-  - S3 bucket ACLs
-  - CloudTrail status
-- Integrated with Security Hub.
+### 1. AWS CloudTrail
 
-## GuardDuty
-- Enabled in all available regions.
-- Findings include:
-  - Unauthorized access attempts
-  - DNS exfiltration
-  - Compromised IAM role usage
-  - EC2 port scanning (simulated)
+- CloudTrail enabled to record:
+  - Management events (control plane).
+  - Read and write actions.
+- Logs delivered to:
+  - Dedicated S3 bucket for CloudTrail logs.
+- Key configuration:
+  - Log file validation enabled where applicable.
+  - Multi-region coverage to avoid blind spots.
 
-## Security Hub
-Frameworks enabled:
-- CIS AWS Foundations Benchmark
-- AWS Foundational Security Best Practices
+### 2. AWS Config
 
-Findings aggregated from:
-- GuardDuty
-- Config
-- IAM Access Analyzer
-- S3 public access checks
+- AWS Config enabled to track:
+  - Resource configuration history.
+  - Configuration changes over time.
+- Rules enabled to check for:
+  - Root account MFA enabled.
+  - Public S3 buckets.
+  - Unrestricted security groups (where configured).
+- Configuration history stored and can be tied into Security Hub.
 
-## IAM Access Analyzer
-- Monitors cross-account and external resource access.
-- Alerts for unintended exposure.
+### 3. Security Hub
 
-## Logging Summary
-AWS logs feed into:
-- CloudTrail S3 bucket
-- CloudWatch Logs for runtime visibility
-- GuardDuty console
-- Security Hub unified findings
+- Security Hub enabled with:
+  - CIS AWS Foundations Benchmark.
+  - AWS Foundational Security Best Practices.
+- Findings aggregated from:
+  - GuardDuty.
+  - Config rules.
+  - Other participating services.
+- Dashboards used to:
+  - Monitor compliance status.
+  - Track security posture over time.
 
-This creates a multilayer detection and audit system aligned to Zero Trust monitoring requirements.
+### 4. GuardDuty
+
+- GuardDuty enabled for:
+  - IAM anomaly detection.
+  - EC2, EKS, and VPC-level findings.
+  - S3 access anomaly detection (where configured).
+- Findings integrated into Security Hub.
+
+## Log Storage and Access
+
+- S3 buckets used for:
+  - CloudTrail logs.
+  - Config snapshots.
+- Access restricted by:
+  - IAM roles and policies for read access.
+  - Deny policies to prevent public access.
+- Lifecycle policies can be applied for:
+  - Archival.
+  - Retention management.
+
+## Consumption and Analysis
+
+- Security teams or admin roles can:
+  - Query CloudTrail via the AWS console or Athena.
+  - Review Security Hub findings.
+  - Investigate GuardDuty alerts.
+- Logs and findings can be:
+  - Exported for external SIEM correlation.
+  - Used to validate controls against frameworks like NIST 800-171.
+
+This architecture ensures that all significant AWS activity is captured, retained, and surfaced through centralized security views.
