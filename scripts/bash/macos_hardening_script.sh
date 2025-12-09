@@ -1,8 +1,4 @@
-### Checks firewall status
-### Checks disk encryption
-### Checks guest account
-### Checks SSH settings (Linux)
-### Prints results
+# macOS hardening validation script.
 
 #!/bin/bash
 
