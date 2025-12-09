@@ -1,5 +1,3 @@
-# File: endpoint-security/defender_macos.md
-
 # Microsoft Defender for Endpoint on macOS
 
 ## Onboarding Steps
