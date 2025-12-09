@@ -1,0 +1,8 @@
+# Microsoft 365 Security Controls
+
+Implemented settings:
+- Safe Attachments
+- Safe Links
+- Anti-phishing policies
+- Spam filter hardening
+- DKIM, SPF, and DMARC validation
