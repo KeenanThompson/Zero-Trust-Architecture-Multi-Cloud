@@ -34,5 +34,3 @@ This environment implements a practical Zero Trust reference architecture across
 - Endpoint plane: macOS, iOS/iPadOS, Windows, and Linux devices hardened and monitored.
 - SaaS plane: SSO/SAML and SCIM-based provisioning for selected SaaS applications.
 - Automation: Python and shell scripts used for IAM auditing and host hardening checks.
-
-This architecture is a small-scale sandbox representative of enterprise environments.
