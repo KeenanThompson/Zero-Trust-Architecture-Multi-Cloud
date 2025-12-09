@@ -1,5 +1,3 @@
-# File: diagrams/README.md
-
 # Diagrams
 
 This directory is reserved for architecture and flow diagrams.
