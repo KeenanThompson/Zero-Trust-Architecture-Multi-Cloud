@@ -1,6 +1,6 @@
 # Zero Trust Architecture Overview
 
-This project implements a practical Zero Trust reference architecture across:
+This environment implements a practical Zero Trust reference architecture across:
 
 - Microsoft 365 / Entra ID
 - Azure AD Conditional Access
