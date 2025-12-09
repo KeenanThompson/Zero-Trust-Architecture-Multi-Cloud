@@ -1,5 +1,3 @@
-# File: architecture/data_flow.md
-
 # Authentication and Authorization Data Flow
 
 ## 1. User Authentication
