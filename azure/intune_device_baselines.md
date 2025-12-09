@@ -47,4 +47,4 @@ Windows:
   - Device compliance reports.
   - Endpoint analytics and advanced analytics where licensed.
 
-This gives a realistic cross-platform baseline: Apple and Windows devices via Intune, and Linux documented via host-level hardening.
+This gives represents a cross-platform baseline: Apple and Windows devices via Intune, and Linux documented via host-level hardening.
