@@ -1,8 +1,25 @@
 # Microsoft 365 Security Controls
 
-Implemented settings:
-- Safe Attachments
-- Safe Links
-- Anti-phishing policies
-- Spam filter hardening
-- DKIM, SPF, and DMARC validation
+The following Microsoft 365 security capabilities are configured at a lab scale:
+
+## Email and Collaboration Protection
+
+- Safe Attachments policies enabled for inbound mail.
+- Safe Links policies applied to protect against malicious URLs.
+- Anti-phishing policies tuned for stricter detection in user mailboxes.
+- Spam and bulk mail filters hardened.
+
+## Authentication and Domain Security
+
+- MFA enforced through Conditional Access.
+- Legacy authentication blocked.
+- DKIM and SPF configured for supported domains.
+- DMARC policy validated for alignment.
+
+## Monitoring and Visibility
+
+- M365 audit logging enabled.
+- Access to activity reports and security insights.
+- Integration potential for SIEM via log export or APIs.
+
+These controls illustrate a practical baseline for securing mail, collaboration, and identity in a Microsoft 365 tenant.
