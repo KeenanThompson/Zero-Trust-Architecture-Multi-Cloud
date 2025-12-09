@@ -1,4 +1,3 @@
-```md
 # Windows Endpoint Security and EDR Strategy
 
 This document describes the current and planned state for Windows endpoint protection.
