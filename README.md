@@ -1,4 +1,4 @@
-# Zero-Trust-Architecture-Multi-Cloud
+# Zero-Trust Architecture Multi-Cloud
 
 This repository documents a complete Zero Trust security architecture spanning Microsoft 365, Entra ID, AWS, Okta, endpoint security platforms, and supporting automation. 
 This workflow demonstrates the design, implementation, and validation of modern identity centric and cloud centric security controls across multiple platforms.
